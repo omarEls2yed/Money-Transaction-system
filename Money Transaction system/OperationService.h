@@ -38,25 +38,15 @@ class OperationService
 public:
 	void SentMoney(string type, CardModel* yourcard, CardModel* friendcard, string frombank, string tobank, string tocard) {
 		ICardPayment* yourcart = NULL;
-		if (type == "visa card") {
-			yourcart = new Visa;
-			yourcart->send_money(yourcard, friendcard, frombank, tobank, tocard);
-		}
-		else {
-			yourcart = new MasterCard;
-			yourcart->send_money(yourcard, friendcard, frombank, tobank, tocard);
-		}
+                if (type == "visa card") yourcart = new Visa;
+                else yourcart = new MasterCard;
+                yourcart->send_money(yourcard, friendcard, frombank, tobank, tocard);
 	}
 	void CollectMoney(string type, CardModel* to, string tobank) {
 		ICardPayment* yourcart = NULL;
-		if (type == "visa card") {
-			yourcart = new Visa;
-			yourcart->collect_money(to, tobank);
-		}
-		else {
-			yourcart = new MasterCard;
-			yourcart->collect_money(to, tobank);
-		}
+                if (type == "visa card") yourcart = new Visa;
+                else yourcart = new MasterCard;
+                yourcart->collect_money(to, tobank);
 	}
 	void transaction_history(CardModel* card)
 	{
