@@ -34,14 +34,6 @@
 #include "AccountModel.h"
 using namespace std;
 string cinbank, cincardtype;
-class AccountModel;
-class CardModel;
-class CreateAccount;
-class AccountService;
-class IcardPayment;
-class OperationService;
-class Visa;
-class MasterCard;
 signed main()
 {
 	string name;
@@ -110,9 +102,9 @@ signed main()
 			cin >> phonenumber;
 			new_account->PhoneNumber = phonenumber;
 			CreateAccount newaccount(new_account);
-			if (service.cheak_account(newaccount.account))
+			if (service.cheak_account(new_account))
 			{
-				service.save_account(newaccount.account);
+				service.save_account(new_account);
 			}
 			else
 			{
