@@ -12,7 +12,7 @@ class AccountService {
 public:
 	bool cheak_card(CardModel* card, string bankname, string cardtype, string amount);
 	bool cheak_card(CardModel* card, string bankname, string cardtype);
-	bool cheak_card(string cardnumber, string bankname, string cardtype)
+	bool cheak_card(string cardnumber, string bankname, string cardtype);
 	void add_card(CardModel* card);
 	bool cheak_account(AccountModel* accountmodl);
 	void save_account(AccountModel* accountmodl);
