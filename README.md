@@ -25,9 +25,6 @@ Instant Transfer: Sarah opens her app, selects the option to send money, and ent
 
 Real-Time Notifications: Sarah's friends instantly receive notifications about the payment request. They confirm the request and use their own money transaction apps to transfer their respective shares.
 
-Confirmation: Sarah receives real-time notifications confirming that her friends have paid their portions. The entire process takes only a few minutes, allowing the group to leave the restaurant without
-worrying about cash or complicated bill-splitting calculations.
-
 Transaction History: Sarah and her friends can later review the transaction history in their apps to keep track of the dinner expense and payments.
 
 my program has these all features
