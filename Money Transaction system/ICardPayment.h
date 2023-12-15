@@ -11,7 +11,7 @@ string cinbank, cincardtype;
 class ICardPayment
 {
 public:
-	virtual void send_money(CardModel* from, CardModel* to, string frombank, string tobank, string tocardtype) = 0;
+	virtual void send_money(CardModel* from, string cardnumber, string frombank, string tobank, string tocardtype) = 0;
 	virtual void collect_money(CardModel* to, string tobank) = 0;
 };
 
