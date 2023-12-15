@@ -145,6 +145,55 @@ string cinbank, cincardtype;
 		}
 		return false;
 	}
+        bool AccountService::cheak_card(string cardnumber, string bankname, string cardtype)
+        {
+	map<string,int>mp2;
+	ifstream file;
+	if (bankname == "Banquemisr" and cardtype == "visa card") {
+		file.open("visaBanquemisr.txt", ios::in);
+	}
+	else if (bankname == "National Bank of Egypt" and cardtype == "visa card")
+	{
+		file.open("visaNational Bank of Egypt.txt", ios::in);
+	}
+	else if (bankname == "The United Bank of Egypt" and cardtype == "visa card")
+	{
+		file.open("visaThe United Bank of Egypt.txt", ios::in);
+	}
+	else if (bankname == "Banquemisr" and cardtype == "master card")
+	{
+		file.open("masterBanquemisr.txt", ios::in);
+	}
+	else if (bankname == "National Bank of Egypt" and cardtype == "master card")
+	{
+		file.open("masterNational Bank of Egypt.txt", ios::in);
+	}
+	else if (bankname == "The United Bank of Egypt" and cardtype == "master card")
+	{
+		file.open("masterThe United Bank of Egypt.txt", ios::in);
+	}
+	else
+	{
+		cout << "bank not found" << endl;
+	}
+	while (file.is_open()) {
+		string line;
+		int counter = 0;
+		while (getline(file,line))
+		{
+			if (line == "*"){
+				counter = 0;
+			}
+			if (counter == 2){
+				mp2[line]++;
+			}
+			counter++;
+		}
+		file.close();
+	}
+	if (mp2[cardnumber] > 0)return true;
+	else return false;
+        }
 	void AccountService::add_card(CardModel * card)
 	{
 		ofstream file;
