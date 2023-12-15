@@ -73,6 +73,7 @@ signed main()
 			cin >> numofoperation;
 		}
 		if (numofoperation == 1) {
+			system("cls");
 			AccountModel* new_account = new AccountModel;
 			cout << "enter your name" << endl;
 			cin >> name;
@@ -102,19 +103,20 @@ signed main()
 			cin >> phonenumber;
 			new_account->PhoneNumber = phonenumber;
 			CreateAccount newaccount(new_account);
-			if (service.cheak_account(new_account))
+			if (service.cheak_account(newaccount.account))
 			{
-				service.save_account(new_account);
+				service.save_account(newaccount.account);
+				cout << "welcome new user (:" << endl;
 			}
 			else
 			{
-				cout << "welcome back " << " " << name << endl;
+				cout << "welcome back " << name << endl;
 			}
 			cheakaccountt = 1;
 		}
 		if (numofoperation == 2)
 		{
-			CardModel* friendcard = new CardModel;
+			system("cls");
 			CardModel* yourcard = new CardModel;
 			bool one = 0;
 			bool two = 0;
@@ -122,6 +124,7 @@ signed main()
 			string frombank;
 			string tocard;
 			string fromcard;
+			string cardNumber;
 			cout << "to sent money you have to add your visa and visa you want to sent " << endl;
 			while (true) {
 				int banknumber;
@@ -162,7 +165,7 @@ signed main()
 					cardtype = "master card";
 					fromcard = "master card";
 				}
-
+	
 				string cardholderName;
 				string phoneNumber;
 				string cardNumber;
@@ -215,7 +218,7 @@ signed main()
 				int cardnumber;
 				cout << "choise the type of the card that you want to sent money" << endl;
 				cout << "1- visa card" << endl;
-				cout << "1- master card" << endl;
+				cout << "2- master card" << endl;
 				cin >> cardnumber;
 				cout << "choise the bank of the card that you want to sent money" << endl;
 				cout << "1-Banquemisr" << endl;
@@ -247,41 +250,17 @@ signed main()
 					cardtype = "master card";
 					tocard = "master card";
 				}
-
-				string cardholderName;
-				string phoneNumber;
-				string cardNumber;
-				string zipCode;
-				string cVV;
-				cout << "enter card holder Name : the name appear on the Visa card." << endl;
-				cin >> cardholderName;
-				cout << "enter card Number : A 16-digit number unique to your card." << endl;
+				
+				cout << "enter card Number : A 16-digit number unique to the card that you want to sent money." << endl;
 				cin >> cardNumber;
 				while (cardNumber.size() != 16)
 				{
-					cout << "enter valid card Number : A 16-digit number unique to your card." << endl;
+					cout << "enter card Number : A 16-digit number unique to the card that you want to sent money." << endl;
 					cin >> cardNumber;
 				}
-				cout << "enter CVV (Card Verification Value) : A three-digit security code on the back of the card" << endl;
-				cin >> cVV;
-				while (cVV.size() != 3)
-				{
-					cout << "enter valid CVV (Card Verification Value) : A three-digit security code on the back of the card" << endl;
-					cin >> cVV;
-				}
-				cout << "Zip Code : The postal code of the cardholder's billing address." << endl;
-				cin >> zipCode;
-				cout << "enter the phone number that link with the card" << endl;
-				cin >> phoneNumber;
-				friendcard->CardholderName = cardholderName;
-				friendcard->PhoneNumber = phoneNumber;
-				friendcard->CardNumber = cardNumber;
-				friendcard->ZipCode = zipCode;
-				friendcard->CVV = cVV;
-				if (service.cheak_card(friendcard, bank, cardtype))
+				if (service.cheak_card(cardNumber,bank,cardtype))
 				{
 					cout << "card you want to sent money to it is valid" << endl;
-					service.add_card(friendcard);
 					two = 1;
 					break;
 				}
@@ -296,7 +275,7 @@ signed main()
 			if (one == 1 and two == 1)
 			{
 				OperationService* Operation_Service = new OperationService;
-				Operation_Service->SentMoney(fromcard, yourcard, friendcard, frombank, tobank, tocard);
+				Operation_Service->SentMoney(fromcard, yourcard,cardNumber, frombank, tobank, tocard);
 				cout << "Money has sent succisfully" << endl;
 			}
 			else {
@@ -304,6 +283,7 @@ signed main()
 			}
 		}
 		if (numofoperation == 3) {
+			system("cls");
 			cout << "to collect money you have to verifay your card " << endl;
 			while (true) {
 				OperationService* Operation_Service = new OperationService;
@@ -326,16 +306,22 @@ signed main()
 			}
 		}
 		if (numofoperation == 4) {
-
+			system("cls");
 			cout << "to see your transaction " << endl;
 			while (true) {
 				OperationService* Operation_Service = new OperationService;
-				CardModel* Card_model = new CardModel;
-				Card_model = Operation_Service->cincard();
-				if (service.cheak_card(Card_model, cinbank, cincardtype))
+				string cardnumber;
+				cout << "enter card Number : A 16-digit number unique to the card that you want to sent money." << endl;
+				cin >> cardnumber;
+				while (cardnumber.size() != 16)
+				{
+					cout << "enter valid card Number : A 16-digit number unique to the card that you want to sent money." << endl;
+					cin >> cardnumber;
+				}
+				if (service.cheak_card(cardnumber, cinbank, cincardtype))
 				{
 					cout << "this is you transaction " << endl;
-					Operation_Service->transaction_history(Card_model);
+					Operation_Service->transaction_history(cardnumber);
 				}
 				else
 				{
@@ -347,6 +333,7 @@ signed main()
 			}
 		}
 		if (numofoperation == 5) {
+			system("cls");
 			cout << "cin your card to cheak it" << endl;
 			while (true) {
 				OperationService* Operation_Service = new OperationService;
@@ -366,9 +353,11 @@ signed main()
 			}
 		}
 		if (numofoperation == 6) {
+			system("cls");
 			cheakaccountt = 0;
 		}
 		if (numofoperation == 7) {
+			system("cls");
 			cout << "program end" << endl;
 			break;
 		}
