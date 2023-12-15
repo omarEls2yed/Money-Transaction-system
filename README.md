@@ -36,7 +36,7 @@ my program has these all features
 
 ![uml](https://github.com/omarEls2yed/Money-Transaction-system/assets/138625022/c8f1aea7-9091-435f-a16d-1e29463e04ef)
 
-# Applied oop topic :
+# Applied OOP topics :
 
 - overloading
  
