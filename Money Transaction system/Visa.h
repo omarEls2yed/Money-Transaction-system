@@ -15,7 +15,7 @@ public:
 	AccountService* S = new AccountService;
 	string cardtype = "visa card";
 	string amountofmoney;
-	void send_money(CardModel* from, CardModel* to, string frombank, string tobank, string tocardtype);
+	void send_money(CardModel* from, string cardnumber , string frombank, string tobank, string tocardtype);
 	void collect_money(CardModel* to, string tobank);
 };
 
