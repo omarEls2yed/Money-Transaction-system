@@ -10,11 +10,11 @@
 #include <conio.h>
 #include <stdlib.h>
 using namespace std;
-void OperationService::SentMoney(string type, CardModel* yourcard, CardModel* friendcard, string frombank, string tobank, string tocard) {
+void OperationService::SentMoney(string type, CardModel* yourcard,string cardnumber, string frombank, string tobank, string tocard) {
 	ICardPayment* yourcart = NULL;
 	if (type == "visa card") yourcart = new Visa;
 	else yourcart = new MasterCard;
-	yourcart->send_money(yourcard, friendcard, frombank, tobank, tocard);
+	yourcart->send_money(yourcard,cardnumber, frombank, tobank, tocard);
 }
 void OperationService::CollectMoney(string type, CardModel* to, string tobank) {
 	ICardPayment* yourcart = NULL;
@@ -22,7 +22,7 @@ void OperationService::CollectMoney(string type, CardModel* to, string tobank) {
 	else yourcart = new MasterCard;
 	yourcart->collect_money(to, tobank);
 }
-void OperationService::transaction_history(CardModel* card)
+void OperationService::transaction_history(string cardnumber)
 {
 	ifstream file1;
 	file1.open("transaction history.txt", ios::in);
@@ -38,9 +38,9 @@ void OperationService::transaction_history(CardModel* card)
 	}
 	for (int i = 0; i < v.size(); i += 3)
 	{
-		if (v[i + 1] == card->CardNumber)
+		if (v[i+1] == cardnumber)
 		{
-			cout << v[i] << " sent to u " << v[i + 2] << endl;
+			cout << v[i] << " sent to you " << v[i+2] << " $ " << endl;
 		}
 	}
 }
