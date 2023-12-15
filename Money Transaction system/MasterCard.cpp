@@ -46,7 +46,7 @@ void MasterCard::void send_money(CardModel* from, string cardnumber, string from
 	        cout << "you havent this amount of monye" << endl;
 	}
 }
-void MasterCard::collect_money(CardModel* to, string tobank)
+	void MasterCard::collect_money(CardModel* to, string tobank)
 	{
 		if (S->cheak_card(to,tobank,cardtype))
 		{
@@ -99,4 +99,4 @@ void MasterCard::collect_money(CardModel* to, string tobank)
 				Service_Account->updatefile(save, place, money[i], '+');
 			}
 		}
-	}
+         }
