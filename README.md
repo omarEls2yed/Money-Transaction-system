@@ -50,7 +50,7 @@ my program has these all features
 
    ![4](https://github.com/omarEls2yed/Money-Transaction-system/assets/138625022/af13f641-a491-45ff-a0e4-ccb732d6ada0)
 
-- inheritance
+- Interface implementation classes
  
   ![5](https://github.com/omarEls2yed/Money-Transaction-system/assets/138625022/a4298563-d5cc-42b6-804e-3017e6a455bc)
   ![6](https://github.com/omarEls2yed/Money-Transaction-system/assets/138625022/ca6b2c49-fda2-4238-92ef-5eee8f1a50e5)
