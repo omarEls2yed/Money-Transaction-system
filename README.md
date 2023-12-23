@@ -16,6 +16,7 @@ After an enjoyable meal, it's time to settle the bill.
 The waiter informs them that they can only accept one payment for the entire table.
 
 Here's where Sarah encounters the need for a money transaction system
+
 limited cash , convenience , instant transfer , real time notification , transaction history
 
 # UML :
