@@ -15,19 +15,7 @@ One evening, Sarah and her friends decide to have dinner at a new restaurant in 
 After an enjoyable meal, it's time to settle the bill. 
 The waiter informs them that they can only accept one payment for the entire table.
 
-Here's where Sarah encounters the need for a money transaction system:
-
-Limited Cash: Sarah doesn't have enough cash on hand to cover her share of the bill, and she realizes that her friends are in a similar situation.
-
-Convenience: Instead of dealing with the hassle of splitting the bill in cash or waiting for friends to transfer money later, Sarah suggests using a money transaction system like mine.
-
-Instant Transfer: Sarah opens her app, selects the option to send money, and enters the total bill amount. She then selects her friends from her contact list and splits the bill equally.
-
-Real-Time Notifications: Sarah's friends instantly receive notifications about the payment request. They confirm the request and use their own money transaction apps to transfer their respective shares.
-
-Transaction History: Sarah and her friends can later review the transaction history in their apps to keep track of the dinner expense and payments.
-
-my program has these all features
+Here's where Sarah encounters the need for a money transaction system
 
 # UML :
 
